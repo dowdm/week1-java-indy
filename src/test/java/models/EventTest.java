@@ -205,6 +205,13 @@ public class EventTest {
         assertEquals(2300, testEvent.getTotalCost());
     }
 
+    @Test
+    public void setTotalCost_checksForInvalidCouponEntry_false() throws Exception{
+        Event testEvent = new Event();
+        testEvent.discountCost("jksdhgfksjd");
+        assertEquals(false, testEvent.discountCost("jksdhgfksjd"));
+    }
+
 
 
 

@@ -137,6 +137,13 @@ public class EventTest {
         assertEquals(false, testEvent.setEntertainmentFee("jyfkhf"));
     }
 
+    @Test
+    public void setEntertainmentFee_checkInvalidityOfEntertainmentEntry_true() throws Exception{
+        Event testEvent = new Event();
+        testEvent.setEntertainmentFee("dj");
+        assertEquals(true, testEvent.setEntertainmentFee("dj"));
+    }
+
 
 
 }

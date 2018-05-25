@@ -51,13 +51,19 @@ public class Event {
         return perCapitaRate;
     }
 
-    public void setPerCapitaRateForFood(String food){
+    public boolean setPerCapitaRateForFood(String food){
         if(food.equals("steak")){
             perCapitaRate += 10;
+            return true;
         } else if (food.equals("vegan")){
             perCapitaRate += 8;
+            return true;
+        } else if (food.equals("snacks")){
+            perCapitaRate += 4;
+            return true;
         } else {
             perCapitaRate += 0;
+            return false;
         }
     }
 

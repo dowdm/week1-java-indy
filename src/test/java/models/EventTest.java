@@ -49,7 +49,12 @@ public class EventTest {
         testEvent.setPerCapitaRateForFood("vegan");
         assertEquals(8, testEvent.getPerCapitaRate());
     }
-
+    @Test
+    public void setPerCapitaRateForFood_increasesRateBy4ForSnacks_4() throws Exception {
+        Event testEvent = new Event();
+        testEvent.setPerCapitaRateForFood("snacks");
+        assertEquals(4, testEvent.getPerCapitaRate());
+    }
 
 
 }

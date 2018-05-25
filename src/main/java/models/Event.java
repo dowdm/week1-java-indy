@@ -9,7 +9,7 @@ public class Event {
     private String entertainment;
     private int perCapitaRate = 0;
 
-    public Event(int attendees, String food, String entertainment){
+    public Event(){
         this.attendees = attendees;
         this.food = food;
         this.entertainment= entertainment;

@@ -66,6 +66,21 @@ public class Event {
             return false;
         }
     }
+    public boolean setPerCapitaRateForBeverages(String beverages){
+        if(beverages.equals("open bar")){
+            perCapitaRate += 10;
+            return true;
+        } else if (beverages.equals("beer and wine")){
+            perCapitaRate += 8;
+            return true;
+        } else if (beverages.equals("softdrinks")){
+            perCapitaRate += 4;
+            return true;
+        } else {
+            perCapitaRate += 0;
+            return false;
+        }
+    }
 
 
 

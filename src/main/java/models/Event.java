@@ -6,6 +6,7 @@ public class Event {
     private String beverages;
     private String entertainment;
     private int perCapitaRate = 0;
+    private int entertainmentFee =0;
 
     public Event(){
         this.attendees = attendees;
@@ -13,6 +14,7 @@ public class Event {
         this.beverages = beverages;
         this.entertainment= entertainment;
         this.perCapitaRate = perCapitaRate;
+        this.entertainmentFee = entertainmentFee;
     }
     public int getAttendees() {
         return attendees;
@@ -78,6 +80,26 @@ public class Event {
             return true;
         } else {
             perCapitaRate += 0;
+            return false;
+        }
+    }
+
+
+    public int getEntertainmentFee() {
+        return entertainmentFee;
+    }
+    public boolean setEntertainmentFee(String entertainment){
+        if(entertainment.equals("live band")){
+            entertainmentFee += 600;
+            return true;
+        } else if (entertainment.equals("dj")){
+            entertainmentFee += 300;
+            return true;
+        } else if (entertainment.equals("comedian/mc")){
+            entertainmentFee += 200;
+            return true;
+        } else {
+            entertainmentFee += 0;
             return false;
         }
     }

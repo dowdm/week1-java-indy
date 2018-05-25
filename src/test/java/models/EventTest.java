@@ -124,6 +124,13 @@ public class EventTest {
     }
 
     @Test
+    public void setEntertainmentFee_increasesFeeBy0ForInvalidChoice_0() throws Exception{
+        Event testEvent = new Event();
+        testEvent.setEntertainmentFee("ckjsdfgkc");
+        assertEquals(0,testEvent.getEntertainmentFee());
+    }
+
+    @Test
     public void setEntertainmentFee_checkInvalidityOfEntertainmentEntry_false() throws Exception{
         Event testEvent = new Event();
         testEvent.setEntertainmentFee("jyfkhf");

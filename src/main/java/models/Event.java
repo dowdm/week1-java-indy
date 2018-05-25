@@ -73,7 +73,7 @@ public class Event {
         } else if (beverages.equals("beer and wine")){
             perCapitaRate += 8;
             return true;
-        } else if (beverages.equals("softdrinks")){
+        } else if (beverages.equals("soft drinks")){
             perCapitaRate += 4;
             return true;
         } else {

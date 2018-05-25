@@ -68,6 +68,12 @@ public class EventTest {
         testEvent.setPerCapitaRateForBeverages("beer and wine");
         assertEquals(8, testEvent.getPerCapitaRate());
     }
+    @Test
+    public void setPerCapitaRateForBeverages_increasesRateBy8ForSoftDrinks_4() throws Exception {
+        Event testEvent = new Event();
+        testEvent.setPerCapitaRateForBeverages("soft drinks");
+        assertEquals(4, testEvent.getPerCapitaRate());
+    }
 
 
 }

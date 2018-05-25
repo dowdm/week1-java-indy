@@ -2,16 +2,15 @@ package models;
 
 public class Event {
     private int attendees;
-
-
-
     private String food;
+    private String beverages;
     private String entertainment;
     private int perCapitaRate = 0;
 
     public Event(){
         this.attendees = attendees;
         this.food = food;
+        this.beverages = beverages;
         this.entertainment= entertainment;
         this.perCapitaRate = perCapitaRate;
     }
@@ -30,6 +29,15 @@ public class Event {
     public void setFood(String food) {
         this.food = food;
     }
+
+    public String getBeverages() {
+        return beverages;
+    }
+
+    public void setBeverages(String beverages) {
+        this.beverages = beverages;
+    }
+
 
     public String getEntertainment() {
         return entertainment;

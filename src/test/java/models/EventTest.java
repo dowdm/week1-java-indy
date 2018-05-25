@@ -24,6 +24,20 @@ public class EventTest {
         assertEquals(200, testEvent.getAttendees());
     }
 
+    @Test
+    public void setEntertainment_setsEventEntertainment_dj() throws Exception {
+        Event testEvent = new Event();
+        testEvent.setEntertainment("dj");
+        assertEquals("dj", testEvent.getEntertainment());
+    }
+
+    @Test
+    public void setBeverages_setsEventBeverages_openbar() throws Exception {
+        Event testEvent = new Event();
+        testEvent.setBeverages("open bar");
+        assertEquals("open bar", testEvent.getBeverages());
+    }
+
 
 
 }

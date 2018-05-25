@@ -212,6 +212,14 @@ public class EventTest {
         assertEquals(false, testEvent.discountCost("jksdhgfksjd"));
     }
 
+    @Test
+    public void setTotalCost_checksForValidCouponEntry_true() throws Exception{
+        Event testEvent = new Event();
+        testEvent.discountCost("rave");
+        assertEquals(true, testEvent.discountCost("rave"));
+    }
+
+
 
 
 

@@ -7,6 +7,7 @@ public class Event {
     private String entertainment;
     private int perCapitaRate = 0;
     private int entertainmentFee =0;
+
     private int totalCost =0;
 
     public Event(){
@@ -109,6 +110,25 @@ public class Event {
     public int setTotalCost(){
         totalCost = (attendees * perCapitaRate) + entertainmentFee;
         return totalCost;
+    }
+
+
+    public int getTotalCost() {
+        return totalCost;
+    }
+
+
+    public boolean discountCost(String coupon){
+        if(coupon.equals("funeral")){
+            totalCost -= 200;
+            return true;
+        } else if(coupon.equals("rave")){
+            totalCost -= 100;
+            return true;
+        } else {
+            totalCost -= 0;
+            return false;
+        }
     }
 
 

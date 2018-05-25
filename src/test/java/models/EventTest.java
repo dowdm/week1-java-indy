@@ -160,13 +160,25 @@ public class EventTest {
     }
 
     @Test
-    public void setTotalCost_checksTotalCostCalculatioAccuracy_2300() throws Exception{
+    public void setTotalCost_checksTotalCostCalculationAccuracy_2300() throws Exception{
         Event testEvent = new Event();
         testEvent.setAttendees(100);
         testEvent.setPerCapitaRateForFood("steak");
         testEvent.setPerCapitaRateForBeverages("open bar");
         testEvent.setEntertainmentFee("dj");
         assertEquals(2300, testEvent.setTotalCost());
+    }
+
+    @Test
+    public void setTotalCost_checksFuneralCouponDeduction_2100() throws Exception{
+        Event testEvent = new Event();
+        testEvent.setAttendees(100);
+        testEvent.setPerCapitaRateForFood("steak");
+        testEvent.setPerCapitaRateForBeverages("open bar");
+        testEvent.setEntertainmentFee("dj");
+        testEvent.setTotalCost();
+        testEvent.discountCost("funeral");
+        assertEquals(2100, testEvent.getTotalCost());
     }
 
 

@@ -56,6 +56,12 @@ public class EventTest {
         assertEquals(4, testEvent.getPerCapitaRate());
     }
     @Test
+    public void setPerCapitaRateForFood_increasesRateBy0ForInvalidInput_0() throws Exception {
+        Event testEvent = new Event();
+        testEvent.setPerCapitaRateForFood("yfghkf");
+        assertEquals(0, testEvent.getPerCapitaRate());
+    }
+    @Test
     public void setPerCapitaRateForFood_checksForInvalidInput_false() throws Exception {
         Event testEvent = new Event();
         testEvent.setPerCapitaRateForFood("bnkigh");

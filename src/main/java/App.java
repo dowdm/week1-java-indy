@@ -10,8 +10,8 @@ public class App {
         while(programRunning){
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
             System.out.println("Welcome to Matt's Event Planning, Where Funerals and Raves are Cheaper");
-            Event newEvent = new Event();
                 try{
+                    Event newEvent = new Event();
                     System.out.println("Please make a selection: book an event or exit ");
                     String userEntry = bufferedReader.readLine();
                     if(userEntry.toLowerCase().equals("book an event")) {
@@ -22,7 +22,6 @@ public class App {
                         String inputFood = bufferedReader.readLine();
                         if (newEvent.setPerCapitaRateForFood(inputFood.toLowerCase())) {
                             newEvent.setFood(inputFood.toLowerCase());
-                            newEvent.setPerCapitaRateForFood(inputFood.toLowerCase());
                         } else {
                             System.out.println("I didn't understand that, please try again.");
                         }
@@ -30,10 +29,24 @@ public class App {
                         String inputBeverages = bufferedReader.readLine();
                         if (newEvent.setPerCapitaRateForBeverages(inputBeverages.toLowerCase())) {
                             newEvent.setBeverages(inputBeverages.toLowerCase());
-                            newEvent.setPerCapitaRateForBeverages(inputBeverages.toLowerCase());
                         } else {
                             System.out.println("I didn't understand that, please try again.");
                         }
+                        System.out.println("Please choose an entertainment option: live band, dj, or comedian/mc.");
+                        String inputEntertainment = bufferedReader.readLine();
+                        if (newEvent.setEntertainmentFee(inputEntertainment.toLowerCase())){
+                            newEvent.setEntertainment(inputEntertainment.toLowerCase());
+                        } else {
+                            System.out.println("I didn't understand that, please try again.");
+                        }
+                        newEvent.setTotalCost();
+                        System.out.println("Now lets review.");
+                        System.out.println("Attendees: " + newEvent.getAttendees());
+                        System.out.println("Food: " + newEvent.getFood());
+                        System.out.println("Beverages: " + newEvent.getBeverages());
+                        System.out.println("Entertainment: " + newEvent.getEntertainment());
+                        System.out.println("Total: $" + newEvent.getTotalCost());
+
                     } else if(userEntry.toLowerCase().equals("exit")){
                         programRunning =false;
                     } else{

@@ -159,6 +159,16 @@ public class EventTest {
         assertEquals(true, testEvent.setEntertainmentFee("dj"));
     }
 
+    @Test
+    public void setTotalCost_checksTotalCostCalculatioAccuracy_2300() throws Exception{
+        Event testEvent = new Event();
+        testEvent.setAttendees(100);
+        testEvent.setPerCapitaRateForFood("steak");
+        testEvent.setPerCapitaRateForBeverages("open bar");
+        testEvent.setEntertainmentFee("dj");
+        assertEquals(2300, testEvent.setTotalCost());
+    }
+
 
 
 }

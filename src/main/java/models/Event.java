@@ -7,6 +7,7 @@ public class Event {
     private String entertainment;
     private int perCapitaRate = 0;
     private int entertainmentFee =0;
+    private int totalCost =0;
 
     public Event(){
         this.attendees = attendees;
@@ -15,6 +16,7 @@ public class Event {
         this.entertainment= entertainment;
         this.perCapitaRate = perCapitaRate;
         this.entertainmentFee = entertainmentFee;
+        this.totalCost = totalCost;
     }
     public int getAttendees() {
         return attendees;
@@ -102,6 +104,11 @@ public class Event {
             entertainmentFee += 0;
             return false;
         }
+    }
+
+    public int setTotalCost(){
+        totalCost = (attendees * perCapitaRate) + entertainmentFee;
+        return totalCost;
     }
 
 

@@ -54,6 +54,8 @@ public class Event {
     public void setPerCapitaRateForFood(String food){
         if(food.equals("steak")){
             perCapitaRate += 10;
+        } else if (food.equals("vegan")){
+            perCapitaRate += 8;
         } else {
             perCapitaRate += 0;
         }

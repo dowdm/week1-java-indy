@@ -9,7 +9,7 @@ public class App {
         boolean programRunning = true;
         while(programRunning){
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Welcome to Matt's Event Planning, Where Funerals and Raves are Cheaper");
+            System.out.println("Welcome to Matt's Event Planning, Where Funerals and Raves are Cheaper!");
                 try{
                     Event newEvent = new Event();
                     System.out.println("Please make a selection: book an event or exit ");
@@ -50,12 +50,13 @@ public class App {
                                             System.out.println("Beverages: " + newEvent.getBeverages());
                                             System.out.println("Entertainment: " + newEvent.getEntertainment());
                                             System.out.println("Your Discounted Total: $" + newEvent.getTotalCost());
+                                            System.out.println("----------------------------------------------------");
                                         }
                                     }else if (inputDiscountPrompt.toLowerCase().equals("no")) {
                                         System.out.println("Thanks for your booking");
                                         programRunning = false;
                                     }
-                                    } else {
+                                     else {
                                         System.out.println("Invalid entry");
                                     }
                                 } else {
@@ -64,8 +65,6 @@ public class App {
                             } else {
                                 System.out.println("I didn't understand that, please try again.");
                             }
-                        } else {
-                            System.out.println("I didn't understand that, please try again.");
                         }
                     } else if(userEntry.toLowerCase().equals("exit")){
                         programRunning =false;

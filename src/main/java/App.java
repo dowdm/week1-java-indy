@@ -55,9 +55,9 @@ public class App {
                                         System.out.println("Thanks for your booking");
                                         programRunning = false;
                                     }
-//                                    } else {
-//                                        System.out.println("Invalid entry");
-//                                    }
+                                    } else {
+                                        System.out.println("Invalid entry");
+                                    }
                                 } else {
                                     System.out.println("I didn't understand that, please try again.");
                                 }

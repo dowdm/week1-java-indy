@@ -10,4 +10,10 @@ public class EventTest {
         Event testEvent = new Event(10, "dinner", "dj");
         assertEquals(true, testEvent instanceof Event);
     }
+    @Test
+    public void setFood_setsEventFoodToSteak_steak() throws Exception {
+        Event testEvent = new Event(10, "dinner", "dj");
+        testEvent.setFood("steak");
+        assertEquals("steak", testEvent.getFood());
+    }
 }

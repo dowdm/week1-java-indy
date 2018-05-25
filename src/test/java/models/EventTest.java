@@ -38,9 +38,9 @@ public class EventTest {
         assertEquals("open bar", testEvent.getBeverages());
     }
     @Test
-    public void setPerCapitaRate_increasesRateBy10ForSteak_10() throws Exception {
+    public void setPerCapitaRateForFood_increasesRateBy10ForSteak_10() throws Exception {
         Event testEvent = new Event();
-        testEvent.setPerCapitaRate("steak","test", "test");
+        testEvent.setPerCapitaRateForFood("steak");
         assertEquals(10, testEvent.getPerCapitaRate());
     }
 

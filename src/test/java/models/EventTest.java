@@ -109,6 +109,13 @@ public class EventTest {
         assertEquals(600,testEvent.getEntertainmentFee());
     }
 
+    @Test
+    public void setEntertainmentFee_increasesFeeBy300ForDj_300() throws Exception{
+        Event testEvent = new Event();
+        testEvent.setEntertainmentFee("dj");
+        assertEquals(300,testEvent.getEntertainmentFee());
+    }
+
 
 
 }

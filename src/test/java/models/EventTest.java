@@ -88,5 +88,13 @@ public class EventTest {
         assertEquals(4, testEvent.getPerCapitaRate());
     }
 
+    @Test
+    public void setPerCapitaRateForBeverages_checksForInvalidityOfBevInput_false() throws Exception {
+        Event testEvent = new Event();
+        testEvent.setPerCapitaRateForBeverages("dhfsn");
+        assertEquals(false,testEvent.setPerCapitaRateForBeverages("dhfsn"));
+    }
+
+
 
 }

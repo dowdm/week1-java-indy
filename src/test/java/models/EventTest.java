@@ -181,6 +181,18 @@ public class EventTest {
         assertEquals(2100, testEvent.getTotalCost());
     }
 
+    @Test
+    public void setTotalCost_checksForRaveCouponDeduction_2200() throws Exception{
+        Event testEvent = new Event();
+        testEvent.setAttendees(100);
+        testEvent.setPerCapitaRateForFood("steak");
+        testEvent.setPerCapitaRateForBeverages("open bar");
+        testEvent.setEntertainmentFee("dj");
+        testEvent.setTotalCost();
+        testEvent.discountCost("rave");
+        assertEquals(2200, testEvent.getTotalCost());
+    }
+
 
 
 }

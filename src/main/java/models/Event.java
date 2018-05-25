@@ -51,8 +51,12 @@ public class Event {
         return perCapitaRate;
     }
 
-    public void setPerCapitaRate(int perCapitaRate) {
-        this.perCapitaRate = perCapitaRate;
+    public void setPerCapitaRate(String food, String beverages, String entertainment){
+        if(food.equals("steak")){
+            perCapitaRate += 10;
+        } else {
+            perCapitaRate += 0;
+        }
     }
 
 

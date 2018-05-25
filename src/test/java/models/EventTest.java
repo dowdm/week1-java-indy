@@ -37,6 +37,12 @@ public class EventTest {
         testEvent.setBeverages("open bar");
         assertEquals("open bar", testEvent.getBeverages());
     }
+    @Test
+    public void setPerCapitaRate_increasesRateBy10ForSteak_10() throws Exception {
+        Event testEvent = new Event();
+        testEvent.setPerCapitaRate("steak","test", "test");
+        assertEquals(10, testEvent.getPerCapitaRate());
+    }
 
 
 

@@ -22,31 +22,51 @@ public class App {
                         String inputFood = bufferedReader.readLine();
                         if (newEvent.setPerCapitaRateForFood(inputFood.toLowerCase())) {
                             newEvent.setFood(inputFood.toLowerCase());
+                            System.out.println("Please choose a beverage option: open bar, beer and wine, or soft drinks.");
+                            String inputBeverages = bufferedReader.readLine();
+                            if (newEvent.setPerCapitaRateForBeverages(inputBeverages.toLowerCase())) {
+                                newEvent.setBeverages(inputBeverages.toLowerCase());
+                                System.out.println("Please choose an entertainment option: live band, dj, or comedian/mc.");
+                                String inputEntertainment = bufferedReader.readLine();
+                                if (newEvent.setEntertainmentFee(inputEntertainment.toLowerCase())){
+                                    newEvent.setEntertainment(inputEntertainment.toLowerCase());
+                                    newEvent.setTotalCost();
+                                    System.out.println("Now lets review.");
+                                    System.out.println("Attendees: " + newEvent.getAttendees());
+                                    System.out.println("Food: " + newEvent.getFood());
+                                    System.out.println("Beverages: " + newEvent.getBeverages());
+                                    System.out.println("Entertainment: " + newEvent.getEntertainment());
+                                    System.out.println("Total: $" + newEvent.getTotalCost());
+                                    System.out.println("Do you have a discount code: yes or no?");
+                                    String inputDiscountPrompt = bufferedReader.readLine();
+                                    if (inputDiscountPrompt.toLowerCase().equals("yes")){
+                                        System.out.println("Please enter the code:");
+                                        String inputDiscountCode = bufferedReader.readLine();
+                                        if (inputDiscountCode.toLowerCase().equals("funeral") || inputDiscountCode.toLowerCase().equals("rave")){
+                                            newEvent.discountCost(inputDiscountCode.toLowerCase());
+                                            System.out.println("Now lets review.");
+                                            System.out.println("Attendees: " + newEvent.getAttendees());
+                                            System.out.println("Food: " + newEvent.getFood());
+                                            System.out.println("Beverages: " + newEvent.getBeverages());
+                                            System.out.println("Entertainment: " + newEvent.getEntertainment());
+                                            System.out.println("Your Discounted Total: $" + newEvent.getTotalCost());
+                                        }
+                                    }else if (inputDiscountPrompt.toLowerCase().equals("no")) {
+                                        System.out.println("Thanks for your booking");
+                                        programRunning = false;
+                                    }
+//                                    } else {
+//                                        System.out.println("Invalid entry");
+//                                    }
+                                } else {
+                                    System.out.println("I didn't understand that, please try again.");
+                                }
+                            } else {
+                                System.out.println("I didn't understand that, please try again.");
+                            }
                         } else {
                             System.out.println("I didn't understand that, please try again.");
                         }
-                        System.out.println("Please choose a beverage option: open bar, beer and wine, or soft drinks.");
-                        String inputBeverages = bufferedReader.readLine();
-                        if (newEvent.setPerCapitaRateForBeverages(inputBeverages.toLowerCase())) {
-                            newEvent.setBeverages(inputBeverages.toLowerCase());
-                        } else {
-                            System.out.println("I didn't understand that, please try again.");
-                        }
-                        System.out.println("Please choose an entertainment option: live band, dj, or comedian/mc.");
-                        String inputEntertainment = bufferedReader.readLine();
-                        if (newEvent.setEntertainmentFee(inputEntertainment.toLowerCase())){
-                            newEvent.setEntertainment(inputEntertainment.toLowerCase());
-                        } else {
-                            System.out.println("I didn't understand that, please try again.");
-                        }
-                        newEvent.setTotalCost();
-                        System.out.println("Now lets review.");
-                        System.out.println("Attendees: " + newEvent.getAttendees());
-                        System.out.println("Food: " + newEvent.getFood());
-                        System.out.println("Beverages: " + newEvent.getBeverages());
-                        System.out.println("Entertainment: " + newEvent.getEntertainment());
-                        System.out.println("Total: $" + newEvent.getTotalCost());
-
                     } else if(userEntry.toLowerCase().equals("exit")){
                         programRunning =false;
                     } else{

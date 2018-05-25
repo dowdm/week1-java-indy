@@ -95,6 +95,13 @@ public class EventTest {
         assertEquals(false,testEvent.setPerCapitaRateForBeverages("dhfsn"));
     }
 
+    @Test
+    public void setPerCapitaRateForBeverages_checksForBValidityOfBevInput_true() throws Exception {
+        Event testEvent = new Event();
+        testEvent.setPerCapitaRateForBeverages("open bar");
+        assertEquals(true,testEvent.setPerCapitaRateForBeverages("open bar"));
+    }
+
 
 
 }
